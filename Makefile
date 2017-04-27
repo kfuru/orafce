@@ -3,7 +3,7 @@ OBJS= convert.o file.o datefce.o magic.o others.o plvstr.o plvdate.o shmmc.o plv
 
 EXTENSION = orafce
 
-DATA = orafce--3.3.sql orafce--3.2--3.3.sql
+DATA = orafce--3.5.sql orafce--3.2--3.3.sql orafce--3.3--3.4.sql orafce--3.4--3.5.sql
 DOCS = README.asciidoc COPYRIGHT.orafce INSTALL.orafce
 
 PG_CONFIG ?= pg_config
@@ -15,7 +15,7 @@ INTVERSION := $(shell echo $$(($$(echo $(VERSION) | sed 's/\([[:digit:]]\{1,\}\)
 # make "all" the default target
 all:
 
-REGRESS = orafce dbms_output dbms_utility files varchar2 nvarchar2 aggregates nlssort dbms_random
+REGRESS = orafce orafce2 dbms_output dbms_utility files varchar2 nvarchar2 aggregates nlssort dbms_random
 
 REGRESS_OPTS = --load-language=plpgsql --schedule=parallel_schedule --encoding=utf8
 
